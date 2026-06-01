@@ -8,7 +8,7 @@ const BASE = 'http://localhost:3010'
 test.describe('인증 페이지', () => {
   test('로그인 페이지 렌더링', async ({ page }) => {
     await page.goto(`${BASE}/login`)
-    await expect(page.locator('h1, h2')).toContainText('로그인')
+    await expect(page.getByRole('heading', { name: '로그인' })).toBeVisible()
     await expect(page.locator('input[name="email"]')).toBeVisible()
     await expect(page.locator('input[name="password"]')).toBeVisible()
     await expect(page.locator('button[type="submit"]')).toContainText('로그인')
@@ -16,7 +16,7 @@ test.describe('인증 페이지', () => {
 
   test('회원가입 페이지 렌더링', async ({ page }) => {
     await page.goto(`${BASE}/signup`)
-    await expect(page.locator('h1, h2')).toContainText('회원가입')
+    await expect(page.getByRole('heading', { name: '회원가입' })).toBeVisible()
     await expect(page.locator('input[name="email"]')).toBeVisible()
     await expect(page.locator('input[name="password"]')).toBeVisible()
   })
@@ -85,10 +85,10 @@ test.describe('인증 후 플로우', () => {
   test('매물 등록 페이지 렌더링', async ({ page }) => {
     await page.goto(`${BASE}/dashboard/new`)
     await expect(page.locator('text=새 매물 추가')).toBeVisible()
-    await expect(page.locator('text=기본 정보')).toBeVisible()
-    await expect(page.locator('text=체크리스트')).toBeVisible()
-    await expect(page.locator('text=메모')).toBeVisible()
-    await expect(page.locator('button[type="submit"]')).toContainText('매물 저장')
+    await expect(page.getByRole('heading', { name: '기본 정보' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: '체크리스트' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: '메모 & 연락처' })).toBeVisible()
+    await expect(page.locator('button[type="submit"]:has-text("매물 저장")')).toBeVisible()
   })
 
   test('비교표 페이지 렌더링', async ({ page }) => {

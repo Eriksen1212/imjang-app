@@ -13,7 +13,7 @@
     { "id": "T6", "title": "사진 업로드 (Supabase Storage)", "status": "done" },
     { "id": "T7", "title": "체크리스트 저장", "status": "done" },
     { "id": "T8", "title": "비교표 화면", "status": "done" },
-    { "id": "T9", "title": "Vercel 배포", "status": "todo" }
+    { "id": "T9", "title": "Vercel 배포", "status": "done" }
   ],
   "last_updated": "2026-06-01"
 }

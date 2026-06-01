@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "project": "ssot-goal-lab",
+  "goal": "부동산 임장 기록 앱 '임장노트' — 매물 등록·사진·체크리스트·비교표",
+  "current_sprint": "sprint-03",
+  "status": "in_review",
+  "tasks": [
+    { "id": "T1", "title": "제품 스펙 정의", "status": "done" },
+    { "id": "T2", "title": "Supabase schema와 RLS 정책 작성", "status": "done" },
+    { "id": "T3", "title": "Supabase 프로젝트 생성 및 .env.local 설정", "status": "done" },
+    { "id": "T4", "title": "Supabase Auth 로그인/회원가입 구현", "status": "done" },
+    { "id": "T5", "title": "매물 CRUD 구현 (등록·목록·상세·수정·삭제)", "status": "done" },
+    { "id": "T6", "title": "사진 업로드 (Supabase Storage)", "status": "done" },
+    { "id": "T7", "title": "체크리스트 저장", "status": "done" },
+    { "id": "T8", "title": "비교표 화면", "status": "done" },
+    { "id": "T9", "title": "Vercel 배포", "status": "todo" }
+  ],
+  "last_updated": "2026-06-01"
+}

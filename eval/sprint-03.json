@@ -1,0 +1,14 @@
+{
+  "sprint": 3,
+  "evaluated_at": null,
+  "status": "pending",
+  "criteria": {
+    "verify_passes": false,
+    "build_passes": false,
+    "production_url": null,
+    "final_report_written": false,
+    "quality_score_filled": false
+  },
+  "score": 0,
+  "notes": "Sprint 03 평가 대기 중"
+}

@@ -1,0 +1,15 @@
+{
+  "sprint": 1,
+  "evaluated_at": null,
+  "status": "pending",
+  "criteria": {
+    "verify_passes": false,
+    "nextjs_runs": false,
+    "supabase_connected": false,
+    "schema_drafted": false,
+    "ci_written": false,
+    "handoff_written": false
+  },
+  "score": 0,
+  "notes": "Sprint 01 평가 대기 중"
+}

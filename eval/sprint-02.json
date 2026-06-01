@@ -1,0 +1,14 @@
+{
+  "sprint": 2,
+  "evaluated_at": null,
+  "status": "pending",
+  "criteria": {
+    "auth_works": false,
+    "rls_applied": false,
+    "crud_works": false,
+    "build_passes": false,
+    "vercel_preview_url": null
+  },
+  "score": 0,
+  "notes": "Sprint 02 평가 대기 중"
+}

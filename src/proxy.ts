@@ -29,7 +29,9 @@ export async function proxy(request: NextRequest) {
   const isAuthPage = pathname === '/login' || pathname === '/signup'
   const isDashboard = pathname.startsWith('/dashboard')
 
-  if (!user && isDashboard) {
+  // Server Actions(POST + Next-Action 헤더)은 세션을 Server Action 내부에서 직접 검증하므로 통과
+  const isServerAction = request.method === 'POST' && request.headers.has('next-action')
+  if (!user && isDashboard && !isServerAction) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 

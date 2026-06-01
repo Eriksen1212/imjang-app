@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { logout } from '@/features/auth/actions'
 import { createClient } from '@/lib/supabase/server'
+import { Toast } from '@/features/properties/components/Toast'
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient()
@@ -33,6 +35,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <main className="max-w-2xl mx-auto px-4 py-6">
         {children}
       </main>
+
+      <Suspense>
+        <Toast />
+      </Suspense>
     </div>
   )
 }

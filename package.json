@@ -11,7 +11,8 @@
     "check:docs": "node scripts/guardrails/check-docs.mjs",
     "check:structure": "node scripts/guardrails/check-structure.mjs",
     "verify": "npm run check:structure && npm run check:docs && npm run check:env",
-    "agent": "node -r dotenv/config scripts/multi-agent.mjs dotenv_config_path=.env.local"
+    "agent": "node -r dotenv/config scripts/multi-agent.mjs dotenv_config_path=.env.local",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.100.1",

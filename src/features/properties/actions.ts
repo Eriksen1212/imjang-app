@@ -71,7 +71,7 @@ export async function createProperty(
   if (error) return { error: error.message }
 
   revalidatePath('/dashboard')
-  redirect('/dashboard')
+  redirect('/dashboard?message=saved')
 }
 
 export async function updateProperty(
@@ -96,7 +96,7 @@ export async function updateProperty(
 
   revalidatePath(`/dashboard/${id}`)
   revalidatePath('/dashboard')
-  redirect(`/dashboard/${id}`)
+  redirect(`/dashboard/${id}?message=updated`)
 }
 
 export async function deleteProperty(id: string): Promise<void> {

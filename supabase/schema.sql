@@ -134,3 +134,23 @@ create or replace function public.get_property_count(p_user_id uuid)
 returns integer as $$
   select count(*)::integer from public.properties where user_id = p_user_id;
 $$ language sql security definer;
+
+
+-- ============================================================
+-- 5. 이메일 인증 자동 처리 (개발/테스트 환경)
+-- ============================================================
+-- 회원가입 즉시 email_confirmed_at을 설정해 인증 이메일 없이 바로 로그인 가능
+-- 프로덕션에서 이메일 인증을 활성화하려면 이 트리거를 제거하고
+-- Supabase 대시보드 Authentication > Email > "Confirm email" 옵션을 켠다
+create or replace function public.auto_confirm_email()
+returns trigger as $$
+begin
+  new.email_confirmed_at = now();
+  return new;
+end;
+$$ language plpgsql security definer;
+
+drop trigger if exists auto_confirm_email_on_signup on auth.users;
+create trigger auto_confirm_email_on_signup
+  before insert on auth.users
+  for each row execute function public.auto_confirm_email();

@@ -10,11 +10,14 @@
     "check:env": "node scripts/guardrails/check-env.mjs",
     "check:docs": "node scripts/guardrails/check-docs.mjs",
     "check:structure": "node scripts/guardrails/check-structure.mjs",
-    "verify": "npm run check:structure && npm run check:docs && npm run check:env"
+    "verify": "npm run check:structure && npm run check:docs && npm run check:env",
+    "agent": "node -r dotenv/config scripts/multi-agent.mjs dotenv_config_path=.env.local"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.100.1",
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.106.2",
+    "dotenv": "^17.4.2",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",

@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "ssot-goal-lab",
   "goal": "부동산 임장 기록 앱 '임장노트' — 매물 등록·사진·체크리스트·비교표",
-  "current_sprint": "sprint-03",
-  "status": "in_review",
+  "current_sprint": "sprint-02",
+  "status": "in_progress",
   "tasks": [
     { "id": "T1", "title": "제품 스펙 정의", "status": "done" },
     { "id": "T2", "title": "Supabase schema와 RLS 정책 작성", "status": "done" },
@@ -13,7 +13,25 @@
     { "id": "T6", "title": "사진 업로드 (Supabase Storage)", "status": "done" },
     { "id": "T7", "title": "체크리스트 저장", "status": "done" },
     { "id": "T8", "title": "비교표 화면", "status": "done" },
-    { "id": "T9", "title": "Vercel 배포", "status": "done" }
+    { "id": "T9", "title": "Vercel 배포", "status": "done" },
+    {
+      "id": "T10",
+      "title": "proxy.ts에서 Server Action POST 요청 세션 인식 버그 수정",
+      "status": "todo",
+      "description": "폼 저장 시 proxy.ts가 Server Action POST 요청을 인터셉트해 세션을 인식하지 못하고 /login으로 리디렉션하는 버그"
+    },
+    {
+      "id": "T11",
+      "title": "매물 등록/수정 성공 시 토스트 메시지 표시",
+      "status": "todo",
+      "description": "PropertyForm 저장 성공 후 '저장되었습니다' 피드백 UI 추가"
+    },
+    {
+      "id": "T12",
+      "title": "대시보드 매물 카드에 총점(score) 표시",
+      "status": "todo",
+      "description": "PropertyCard에 체크리스트 점수 기반 총점 배지 추가"
+    }
   ],
   "last_updated": "2026-06-01"
 }
